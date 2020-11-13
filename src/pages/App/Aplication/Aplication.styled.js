@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MenuContainer = styled.div`
-	height: 80vh;
+	height: 100vh;
 	min-width: 22rem;
 	position: sticky;
 	top: 7rem;
