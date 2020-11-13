@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const MenuContainer = styled.div`
-	flex: 1;
-	height: 100%;
+	height: 80vh;
 	min-width: 22rem;
+	position: sticky;
+	top: 7rem;
 `;
 
 export const ContentContainer = styled.div`
