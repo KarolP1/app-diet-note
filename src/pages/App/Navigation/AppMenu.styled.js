@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const ButtonContainer = styled.div`
-	height: 95%;
 	display: flex;
 	flex-direction: column;
 	padding: 2rem;
-	border-right: 1px solid ${(props) => props.theme.primaryLight};
+	position: sticky;
+	top: 7rem;
 
 	@media screen and (max-width: 900px) {
 		flex-direction: column;

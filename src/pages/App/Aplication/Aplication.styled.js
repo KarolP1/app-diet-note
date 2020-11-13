@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const MenuContainer = styled.div`
-	height: 100vh;
+	flex: 1;
 	min-width: 22rem;
-	position: sticky;
-	top: 7rem;
+	position: relative;
+	border-right: 1px solid ${(props) => props.theme.primaryLight};
 `;
 
 export const ContentContainer = styled.div`

@@ -4,7 +4,7 @@ export const MainContainer = styled.div`
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	position: relative;
+	height: 100%;
 
 	@media screen and (max-width: 900px) {
 		flex-direction: column;
