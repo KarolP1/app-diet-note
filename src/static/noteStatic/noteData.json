@@ -1,29 +1,29 @@
 {
   "notes":[{
     "id": "0",
-    "title": "lorem ipsum dolor sit amet, consectetur adip",
+    "title": "Notatka 1 lorem ipsum dolor sit amet, consectetur adip",
     "value":"lorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adip",
-    "tagname":"tag 1, tag2"
+    "tagname":["tag1", "tag2"]
 }, {
     "id": "1",
-    "title": "lorem ipsum dolor sit amet, consectetur adip",
+    "title": "Notatka 2 lorem ipsum dolor sit amet, consectetur adip",
     "value":"lorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adip",
-    "tagname":"tag 1, tag2"
+      "tagname":["tag1", "tag2"]
   }, {
     "id": "2",
-    "title": "lorem ipsum dolor sit amet, consectetur adip",
+    "title": "Notatka 3 lorem ipsum dolor sit amet, consectetur adip",
     "value":"lorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adip",
-    "tagname":"tag 1, tag2"
+    "tagname":["tag1", "tag2"]
   }, {
     "id": "3",
-    "title": "lorem ipsum dolor sit amet, consectetur adip",
+    "title": "Notatka 4 lorem ipsum dolor sit amet, consectetur adip",
     "value":"lorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adip",
-    "tagname":"tag 1, tag2"
+  "tagname":["tag1", "tag2"]  
   }, {
     "id": "4",
-    "title": "lorem ipsum dolor sit amet, consectetur adip",
+    "title": "Notatka 5 orem ipsum dolor sit amet, consectetur adip",
     "value":"lorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adip",
-    "tagname":"tag 1, tag2"
+    "tagname":["tag1", "tag2"]
   }]
 }
   

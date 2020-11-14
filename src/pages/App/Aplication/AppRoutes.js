@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Diets from "./AppPages/Diets";
 import Home from "./AppPages/Home";
 import Illnes from "./AppPages/Illnes";
-import Notes from "./AppPages/Note";
+import Notes from "./AppPages/notes/Note";
 import Patterns from "./AppPages/Patterns";
 
 const AppRoutes = () => {

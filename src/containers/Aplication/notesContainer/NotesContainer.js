@@ -1,6 +1,11 @@
 import React from "react";
-import { NotesContentContainer } from "./NotesContainer.styled";
+import { ButtonAdd, NotesContentContainer } from "./NotesContainer.styled";
 
 export const NotesContainer = (props) => {
-	return <NotesContentContainer>{props.children}</NotesContentContainer>;
+	return (
+		<NotesContentContainer>
+			{props.children}
+			<ButtonAdd>Dodaj Notatkę</ButtonAdd>
+		</NotesContentContainer>
+	);
 };
