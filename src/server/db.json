@@ -1,5 +1,5 @@
 {
-  "notes":[{
+  "posts": [{
     "id": "0",
     "title": "Notatka 1 lorem ipsum dolor sit amet, consectetur adip",
     "value":"lorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet, consectetur adip",
@@ -26,4 +26,3 @@
     "tagname":["tag1", "tag2"]
   }]
 }
-  

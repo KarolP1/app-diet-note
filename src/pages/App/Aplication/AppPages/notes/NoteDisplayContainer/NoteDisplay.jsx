@@ -34,8 +34,8 @@ const NoteDisplay = () => {
 					</ValueContainer>
 				</Collapsible>
 				<TagContainer>
-					{note.tagname.map((tag) => (
-						<TagText length={tag.length + 1} href={`/${tag}`}>
+					{note.tagname.map((tag, i) => (
+						<TagText key={i} to={`/app/notes/${tag}`}>
 							{tag}
 						</TagText>
 					))}

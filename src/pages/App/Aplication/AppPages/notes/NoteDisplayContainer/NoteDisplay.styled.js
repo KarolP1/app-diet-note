@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const MainContainer = styled.div`
 	padding: 2rem 4rem;
@@ -46,7 +47,7 @@ export const TagContainer = styled.div`
 	padding: 1rem;
 `;
 
-export const TagText = styled.a`
+export const TagText = styled(Link)`
 	display: flex;
 	text-align: center;
 	text-decoration: none;
