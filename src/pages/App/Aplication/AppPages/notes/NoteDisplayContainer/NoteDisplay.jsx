@@ -28,7 +28,9 @@ const NoteDisplay = () => {
 			},
 		})
 			.then((response) => {
-				setResponseData(response.data);
+				setTimeout(() => {
+					setResponseData(response.data);
+				}, 1000);
 			})
 			.catch((error) => {
 				console.log(error);
@@ -37,7 +39,7 @@ const NoteDisplay = () => {
 
 	const MapNotes = responseData.map((note) => {
 		return (
-			<SingleNoteContainer key={note.id}>
+			<SingleNoteContainer key={note._id}>
 				<Collapsible
 					trigger={
 						<TitleContainer>
