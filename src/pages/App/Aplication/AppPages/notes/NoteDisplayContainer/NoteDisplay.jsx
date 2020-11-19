@@ -1,25 +1,41 @@
 import React, { useEffect, useState } from "react";
-import data from "../../../../../../static/noteStatic/noteData.json";
 import {
 	MainContainer,
 	SingleNoteContainer,
 	TagContainer,
-	TagText,
 	Title,
 	TitleContainer,
 	ValueContainer,
 	ValueText,
 } from "./NoteDisplay.styled";
 import Collapsible from "react-collapsible";
+import axios from "axios";
 
 const NoteDisplay = () => {
-	const [note, setNote] = useState(data);
+	const [responseData, setResponseData] = useState([]);
 
 	useEffect(() => {
-		setNote(data.note);
-	}, [note]);
+		axios({
+			method: "GET",
+			url: "https://dietaplication.herokuapp.com/api/notes",
+			headers: {
+				"content-type": "application/octet-stream",
+				"x-rapidapi-host": "quotes15.p.rapidapi.com",
+				"x-rapidapi-key": process.env.REACT_APP_API_KEY,
+			},
+			params: {
+				language_code: "en",
+			},
+		})
+			.then((response) => {
+				setResponseData(response.data);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	}, [setResponseData, responseData]);
 
-	const MapNotes = data.notes.map((note) => {
+	const MapNotes = responseData.map((note) => {
 		return (
 			<SingleNoteContainer key={note.id}>
 				<Collapsible
@@ -33,13 +49,7 @@ const NoteDisplay = () => {
 						<ValueText>{note.value}</ValueText>
 					</ValueContainer>
 				</Collapsible>
-				<TagContainer>
-					{note.tagname.map((tag, i) => (
-						<TagText key={i} to={`/app/notes/${tag}`}>
-							{tag}
-						</TagText>
-					))}
-				</TagContainer>
+				<TagContainer>mby later</TagContainer>
 			</SingleNoteContainer>
 		);
 	});
