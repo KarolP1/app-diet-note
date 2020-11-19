@@ -37,7 +37,7 @@ const NoteDisplay = () => {
 
 	const MapNotes = responseData.map((note) => {
 		return (
-			<SingleNoteContainer key={note.id}>
+			<SingleNoteContainer key={note._id}>
 				<Collapsible
 					trigger={
 						<TitleContainer>
