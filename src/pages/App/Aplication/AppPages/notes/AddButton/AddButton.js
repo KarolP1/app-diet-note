@@ -1,12 +1,6 @@
 import React from "react";
-import { ButtonContainer, MyButtonAdd } from "./AddButton.styled";
+import { ButtonAdd } from "../../../../../../containers/Aplication/notesContainer/NotesContainer.styled";
 
 export const AddButton = () => {
-	return (
-		<ButtonContainer>
-			<MyButtonAdd onClick={() => console.log("hello")}>
-				Dodaj Notatke
-			</MyButtonAdd>
-		</ButtonContainer>
-	);
+	return <ButtonAdd onClick={() => alert("hello")}>Dodaj Notatke</ButtonAdd>;
 };
