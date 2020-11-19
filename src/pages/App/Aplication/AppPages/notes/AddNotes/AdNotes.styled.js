@@ -8,4 +8,5 @@ export const MainContainer = styled.div`
 	width: 100%;
 	padding: 2rem;
 	display: ${(props) => (props.visible ? "flex" : "none")};
+	flex-direction: column;
 `;
