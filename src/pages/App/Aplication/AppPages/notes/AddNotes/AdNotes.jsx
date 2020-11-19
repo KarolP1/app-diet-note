@@ -1,8 +1,6 @@
 import React from "react";
 import { MainContainer } from "./AdNotes.styled";
 import { Editor } from "@tinymce/tinymce-react";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 import "suneditor/dist/css/suneditor.min.css";
 
