@@ -2,8 +2,6 @@ import React from "react";
 import { MainContainer } from "./AdNotes.styled";
 import { Editor } from "@tinymce/tinymce-react";
 
-import "suneditor/dist/css/suneditor.min.css";
-
 const AdNotes = (props) => {
 	const handleEditorChange = (content, editor) => {
 		console.log("Content was updated:", content);
