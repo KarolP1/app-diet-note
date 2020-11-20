@@ -9,6 +9,7 @@ import {
 	ValueText,
 } from "./NoteDisplay.styled";
 import Collapsible from "react-collapsible";
+import parse from "html-react-parser";
 import axios from "axios";
 
 const NoteDisplay = () => {
@@ -48,7 +49,7 @@ const NoteDisplay = () => {
 					}
 				>
 					<ValueContainer>
-						<ValueText>{note.value}</ValueText>
+						<ValueText>{parse(note.value)}</ValueText>
 					</ValueContainer>
 				</Collapsible>
 				<TagContainer>mby later</TagContainer>
