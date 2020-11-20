@@ -12,6 +12,7 @@ export const SingleNoteContainer = styled.div`
 	border: 1px solid ${(props) => props.theme.primaryDark};
 	border-radius: 0.5rem;
 	margin-bottom: 2rem;
+	position: relative;
 `;
 
 export const TitleContainer = styled.div`
@@ -37,7 +38,7 @@ export const ValueContainer = styled.div`
 	padding: 1rem 2rem;
 `;
 
-export const ValueText = styled.p`
+export const ValueText = styled.div`
 	font-size: 1.5rem;
 `;
 

@@ -11,6 +11,7 @@ import {
 import Collapsible from "react-collapsible";
 import parse from "html-react-parser";
 import axios from "axios";
+import DisplaySettings from "./NoteDisplaySettings/DisplaySettings";
 
 const NoteDisplay = () => {
 	const [responseData, setResponseData] = useState([]);
@@ -48,6 +49,7 @@ const NoteDisplay = () => {
 						</TitleContainer>
 					}
 				>
+					<DisplaySettings />
 					<ValueContainer>
 						<ValueText>{parse(note.value)}</ValueText>
 					</ValueContainer>
