@@ -49,7 +49,7 @@ const NoteDisplay = () => {
 					}
 				>
 					<ValueContainer>
-						<ValueText>{parse(note.value)}</ValueText>
+						<ValueText>{note.value}</ValueText>
 					</ValueContainer>
 				</Collapsible>
 				<TagContainer>mby later</TagContainer>
