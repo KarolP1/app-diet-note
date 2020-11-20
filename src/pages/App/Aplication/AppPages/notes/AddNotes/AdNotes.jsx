@@ -6,14 +6,10 @@ const AdNotes = (props) => {
 	const [editorValue, setEditorValue] = useState("");
 	const [titleValue, setTitle] = useState("");
 
-	const [noteValue, setNoteValue] = useState({ title: "", value: "" });
-
 	const { setPostData } = props;
 	useEffect(() => {
-		setNoteValue({ title: titleValue, value: editorValue });
-		setPostData(noteValue);
-		console.log(noteValue);
-	}, [titleValue, editorValue]);
+		setPostData({ title: titleValue, value: editorValue });
+	}, [titleValue, editorValue, setPostData]);
 
 	return (
 		<MainContainer visible={props.visible}>
