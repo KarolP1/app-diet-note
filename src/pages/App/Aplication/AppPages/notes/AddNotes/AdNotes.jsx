@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { MainContainer } from "./AdNotes.styled";
+import { InputTitle, MainContainer } from "./AdNotes.styled";
 import { Editor } from "@tinymce/tinymce-react";
 
 const AdNotes = (props) => {
@@ -14,15 +14,13 @@ const AdNotes = (props) => {
 	return (
 		<MainContainer visible={props.visible}>
 			<form>
-				<label>
-					Name:
-					<input
-						value={titleValue}
-						type="text"
-						name="name"
-						onChange={(event) => setTitle(event.target.value)}
-					/>
-				</label>
+				<InputTitle
+					value={titleValue}
+					type="text"
+					name="name"
+					onChange={(event) => setTitle(event.target.value)}
+					placeholder="Dodaj tytuł"
+				/>
 				<Editor
 					apiKey="mudahddk8akmnpsm2yod7myf1zx4p2h7tyybwnkbkj5d5325"
 					init={{

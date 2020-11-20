@@ -7,21 +7,24 @@ export const AddButton = () => {
 	const [visible, setVisible] = useState(false);
 
 	const [postData, setPostData] = useState({});
-
 	const PostData = () => {
-		console.log(postData);
+		if (postData.title !== "" && postData.value !== "") {
+			axios
+				.post("https://dietaplication.herokuapp.com/api/notes", {
+					title: postData.title,
+					value: postData.value,
+				})
+				.then((res) => {
+					console.log(res);
+				})
+				.then(() => {
+					window.location.reload();
+				});
+		} else {
+			alert("musisz uzupełnić obydwa pola");
+		}
 
-		axios
-			.post("https://dietaplication.herokuapp.com/api/notes", {
-				title: postData.title,
-				value: postData.value,
-			})
-			.then((res) => {
-				console.log(res);
-			})
-			.then(() => {
-				window.location.reload();
-			});
+		console.log(postData);
 	};
 
 	return (

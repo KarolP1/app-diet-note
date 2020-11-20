@@ -49,7 +49,7 @@ const NoteDisplay = () => {
 						</TitleContainer>
 					}
 				>
-					<DisplaySettings />
+					<DisplaySettings NoteId={note._id} />
 					<ValueContainer>
 						<ValueText>{parse(note.value)}</ValueText>
 					</ValueContainer>
@@ -58,7 +58,11 @@ const NoteDisplay = () => {
 			</SingleNoteContainer>
 		);
 	});
-	return <MainContainer>{MapNotes}</MainContainer>;
+	return (
+		<MainContainer>
+			{responseData.length > 0 ? MapNotes : <div>Loading...</div>}
+		</MainContainer>
+	);
 };
 
 export default NoteDisplay;
