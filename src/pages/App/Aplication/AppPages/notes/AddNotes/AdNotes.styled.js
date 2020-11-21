@@ -18,3 +18,21 @@ export const InputTitle = styled.input`
 	border: 1px solid ${(props) => props.theme.primaryDark};
 	border-radius: 1rem;
 `;
+
+export const CloseAddNote = styled.button`
+	height: 4rem;
+	width: 4rem;
+	background-color: ${(props) => props.theme.primaryDark};
+	color: ${(props) => props.theme.default};
+	position: absolute;
+	top: 3rem;
+	right: 3rem;
+
+	&:hover {
+		background-color: ${(props) => props.theme.warningLight};
+	}
+
+	&:active {
+		transform: rotate(2deg) scale(1.1);
+	}
+`;

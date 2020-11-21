@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { InputTitle, MainContainer } from "./AdNotes.styled";
+import { CloseAddNote, InputTitle, MainContainer } from "./AdNotes.styled";
 import { Editor } from "@tinymce/tinymce-react";
 
 const AdNotes = (props) => {
@@ -37,6 +37,7 @@ const AdNotes = (props) => {
 					onEditorChange={(e, editor) => setEditorValue(editor.getContent())}
 				/>
 			</form>
+			<CloseAddNote onClick={props.closeAddNote}>x</CloseAddNote>
 		</MainContainer>
 	);
 };

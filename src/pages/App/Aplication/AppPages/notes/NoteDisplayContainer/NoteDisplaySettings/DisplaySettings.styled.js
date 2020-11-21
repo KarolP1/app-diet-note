@@ -12,6 +12,7 @@ export const SettingsContainer = styled.div`
 export const IconButton = styled.button`
 	background-color: transparent;
 	border: none;
+	padding-left: 2rem;
 	&:hover {
 		transform: translateY(-0.3rem);
 	}

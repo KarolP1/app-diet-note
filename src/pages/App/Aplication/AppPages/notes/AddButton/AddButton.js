@@ -29,7 +29,11 @@ export const AddButton = () => {
 
 	return (
 		<>
-			<AdNotes visible={visible} setPostData={setPostData} />
+			<AdNotes
+				visible={visible}
+				setPostData={setPostData}
+				closeAddNote={() => setVisible(false)}
+			/>
 			<ButtonAdd
 				type="submit"
 				onClick={() => (visible ? PostData() : setVisible(!visible))}

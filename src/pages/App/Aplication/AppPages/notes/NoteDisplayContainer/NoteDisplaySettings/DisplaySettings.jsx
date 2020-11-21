@@ -3,6 +3,7 @@ import { RubbisBin } from "../../../../../../../icons/Rubishbin/rubishbin";
 import { IconButton, SettingsContainer } from "./DisplaySettings.styled";
 import { ThemeProvider } from "styled-components";
 import axios from "axios";
+import { Eye } from "./../../../../../../../icons/Eye/Eye";
 import {
 	colorTheme,
 	fontTheme,
@@ -21,7 +22,8 @@ const DisplaySettings = (props) => {
 				window.location.reload();
 			});
 	};
-	const [color, setColor] = useState(colorTheme.default);
+	const [colorDelete, setColorDelete] = useState(colorTheme.default);
+	const [colorEdit, setColorEdit] = useState(colorTheme.default);
 	return (
 		<ThemeProvider theme={colorTheme}>
 			<ThemeProvider theme={fontTheme}>
@@ -31,14 +33,25 @@ const DisplaySettings = (props) => {
 							{/* delete button */}
 							<IconButton
 								onMouseEnter={() => {
-									setColor(colorTheme.warningMedium);
+									setColorDelete(colorTheme.warningMedium);
 								}}
 								onMouseLeave={() => {
-									setColor(colorTheme.default);
+									setColorDelete(colorTheme.default);
 								}}
 								onClick={() => deleteNote(props.NoteId)}
 							>
-								<RubbisBin size={25} color={color} />
+								<RubbisBin size={25} color={colorDelete} />
+							</IconButton>
+							<IconButton
+								onMouseEnter={() => {
+									setColorEdit(colorTheme.secondaryDark);
+								}}
+								onMouseLeave={() => {
+									setColorEdit(colorTheme.default);
+								}}
+								onClick={() => deleteNote(props.NoteId)}
+							>
+								<Eye size={25} color={colorEdit} />
 							</IconButton>
 						</SettingsContainer>
 					</ThemeProvider>

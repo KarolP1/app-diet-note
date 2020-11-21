@@ -40,6 +40,10 @@ const NoteDisplay = () => {
 	}, [setResponseData, responseData]);
 
 	const MapNotes = responseData.map((note) => {
+		let textValue = note.value;
+		textValue = textValue.replace(/>\s</g, "><");
+
+		textValue = parse(textValue);
 		return (
 			<SingleNoteContainer key={note._id}>
 				<Collapsible
@@ -51,7 +55,7 @@ const NoteDisplay = () => {
 				>
 					<DisplaySettings NoteId={note._id} />
 					<ValueContainer>
-						<ValueText>{parse(note.value)}</ValueText>
+						<ValueText>{textValue}</ValueText>
 					</ValueContainer>
 				</Collapsible>
 				<TagContainer>mby later</TagContainer>

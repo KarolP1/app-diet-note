@@ -32,6 +32,11 @@ export const TitleContainer = styled.div`
 
 export const Title = styled.p`
 	width: 100%;
+
+	width: 250px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 `;
 export const ValueContainer = styled.div`
 	width: ${(props) => props.width};
