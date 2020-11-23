@@ -8,6 +8,7 @@ export const TinyEditor = (props) => {
 	const [initialValue, setInitialValue] = useState("");
 
 	const value = props.value;
+	console.log(editorValue);
 
 	useEffect(() => {
 		setTitle(value.title);
