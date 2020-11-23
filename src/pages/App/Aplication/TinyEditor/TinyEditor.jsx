@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
-import { CloseAddNote, TinyContainer, InputTitle } from "./TinyEditor.styled";
+import {
+	CloseAddNote,
+	TinyContainer,
+	InputTitle,
+	TitleContainer,
+	ButtonAdd,
+} from "./TinyEditor.styled";
+import Axios from "axios";
 
 export const TinyEditor = (props) => {
 	const [editorValue, setEditorValue] = useState("");
 	const [titleValue, setTitle] = useState("");
 	const [initialValue, setInitialValue] = useState("");
 
-	const value = props.value;
-	console.log(editorValue);
+	const { value, noteId } = props;
 
 	useEffect(() => {
 		setTitle(value.title);
@@ -16,15 +22,30 @@ export const TinyEditor = (props) => {
 	}, [value, props.vale]);
 
 	const closeEditor = props.setVisible;
+
+	const editNotePost = async (noteId) => {
+		Axios.patch(`https://dietaplication.herokuapp.com/api/notes/${noteId}`, {
+			title: titleValue,
+			value: editorValue,
+		}).then(
+			setTimeout(() => {
+				window.location.reload();
+			}, 3000)
+		);
+	};
+
 	return (
 		<TinyContainer visible={props.visible}>
-			<InputTitle
-				value={titleValue ? titleValue : ""}
-				type="text"
-				name="name"
-				onChange={(event) => setTitle(event.target.value)}
-				placeholder="Dodaj tytuł"
-			/>
+			<TitleContainer>
+				<InputTitle
+					value={titleValue ? titleValue : ""}
+					type="text"
+					name="name"
+					onChange={(event) => setTitle(event.target.value)}
+					placeholder="Dodaj tytuł"
+				/>
+				<CloseAddNote onClick={() => closeEditor(false)}>x</CloseAddNote>
+			</TitleContainer>
 			<Editor
 				apiKey="mudahddk8akmnpsm2yod7myf1zx4p2h7tyybwnkbkj5d5325"
 				value={initialValue}
@@ -41,7 +62,7 @@ export const TinyEditor = (props) => {
 				}}
 				onEditorChange={(e, editor) => setEditorValue(editor.getContent())}
 			/>
-			<CloseAddNote onClick={() => closeEditor(false)}>x</CloseAddNote>
+			<ButtonAdd onClick={() => editNotePost(noteId)}>edytuj Notatke</ButtonAdd>
 		</TinyContainer>
 	);
 };

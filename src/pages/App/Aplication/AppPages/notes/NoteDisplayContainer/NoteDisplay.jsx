@@ -57,6 +57,7 @@ const NoteDisplay = (props) => {
 						NoteId={note._id}
 						setVisible={props.setVisible}
 						setValue={props.setValue}
+						setNoteId={props.setNoteId}
 					/>
 					<ValueContainer>
 						<ValueText>{textValue}</ValueText>

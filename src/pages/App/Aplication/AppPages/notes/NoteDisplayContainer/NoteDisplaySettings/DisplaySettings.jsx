@@ -12,13 +12,13 @@ import {
 } from "../../../../../../../theme";
 
 const DisplaySettings = (props) => {
-	const { setValue } = props;
+	const { setValue, setNoteId } = props;
 	const showEditor = props.setVisible;
 
 	const deleteNote = (NoteId) => {
 		axios
 			.delete(`https://dietaplication.herokuapp.com/api/notes/${NoteId}`)
-			.then((res) => {
+			.then(() => {
 				window.location.reload();
 			});
 	};
@@ -28,6 +28,7 @@ const DisplaySettings = (props) => {
 		);
 		setValue(res.data);
 		showEditor(true);
+		setNoteId(NoteId);
 	};
 
 	const [colorDelete, setColorDelete] = useState(colorTheme.default);

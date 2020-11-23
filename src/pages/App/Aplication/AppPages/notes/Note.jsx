@@ -6,11 +6,21 @@ import { NotesContainer } from "./../../../../../containers/Aplication/notesCont
 const Notes = () => {
 	const [visible, setVisible] = useState(false);
 	const [value, setValue] = useState("");
+	const [noteId, setNoteId] = useState("");
 
 	return (
 		<NotesContainer>
-			<TinyEditor visible={visible} setVisible={setVisible} value={value} />
-			<NotesDisplay setVisible={setVisible} setValue={setValue} />
+			<TinyEditor
+				visible={visible}
+				setVisible={setVisible}
+				value={value}
+				noteId={noteId}
+			/>
+			<NotesDisplay
+				setVisible={setVisible}
+				setValue={setValue}
+				setNoteId={setNoteId}
+			/>
 		</NotesContainer>
 	);
 };

@@ -14,17 +14,12 @@ export const AddButton = () => {
 					title: postData.title,
 					value: postData.value,
 				})
-				.then((res) => {
-					console.log(res);
-				})
 				.then(() => {
 					window.location.reload();
 				});
 		} else {
 			alert("musisz uzupełnić obydwa pola");
 		}
-
-		console.log(postData);
 	};
 
 	return (
