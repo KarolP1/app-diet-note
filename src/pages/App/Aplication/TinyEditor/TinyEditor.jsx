@@ -27,11 +27,7 @@ export const TinyEditor = (props) => {
 		Axios.patch(`https://dietaplication.herokuapp.com/api/notes/${noteId}`, {
 			title: titleValue,
 			value: editorValue,
-		}).then(
-			setTimeout(() => {
-				window.location.reload();
-			}, 3000)
-		);
+		}).then(window.location.reload());
 	};
 
 	return (
