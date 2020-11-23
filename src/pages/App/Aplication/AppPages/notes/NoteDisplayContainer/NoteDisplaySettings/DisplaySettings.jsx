@@ -12,16 +12,24 @@ import {
 } from "../../../../../../../theme";
 
 const DisplaySettings = (props) => {
+	const { setValue } = props;
+	const showEditor = props.setVisible;
+
 	const deleteNote = (NoteId) => {
 		axios
 			.delete(`https://dietaplication.herokuapp.com/api/notes/${NoteId}`)
 			.then((res) => {
-				console.log(res);
-			})
-			.then(() => {
 				window.location.reload();
 			});
 	};
+	const editNoteGet = async (NoteId) => {
+		const res = await axios.get(
+			`https://dietaplication.herokuapp.com/api/notes/${NoteId}`
+		);
+		setValue(res.data);
+		showEditor(true);
+	};
+
 	const [colorDelete, setColorDelete] = useState(colorTheme.default);
 	const [colorEdit, setColorEdit] = useState(colorTheme.default);
 	return (
@@ -49,7 +57,7 @@ const DisplaySettings = (props) => {
 								onMouseLeave={() => {
 									setColorEdit(colorTheme.default);
 								}}
-								onClick={() => deleteNote(props.NoteId)}
+								onClick={() => editNoteGet(props.NoteId)}
 							>
 								<Eye size={25} color={colorEdit} />
 							</IconButton>

@@ -13,7 +13,7 @@ import parse from "html-react-parser";
 import axios from "axios";
 import DisplaySettings from "./NoteDisplaySettings/DisplaySettings";
 
-const NoteDisplay = () => {
+const NoteDisplay = (props) => {
 	const [responseData, setResponseData] = useState([]);
 
 	useEffect(() => {
@@ -53,7 +53,11 @@ const NoteDisplay = () => {
 						</TitleContainer>
 					}
 				>
-					<DisplaySettings NoteId={note._id} />
+					<DisplaySettings
+						NoteId={note._id}
+						setVisible={props.setVisible}
+						setValue={props.setValue}
+					/>
 					<ValueContainer>
 						<ValueText>{textValue}</ValueText>
 					</ValueContainer>
