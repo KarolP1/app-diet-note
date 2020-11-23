@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { NotesDisplay } from ".";
 import { TinyEditor } from "../../TinyEditor/TinyEditor";
 import { NotesContainer } from "./../../../../../containers/Aplication/notesContainer/NotesContainer";
