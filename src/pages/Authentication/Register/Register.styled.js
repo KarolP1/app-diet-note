@@ -7,6 +7,9 @@ export const RegisterContainer = styled.div`
 	flex-direction: row;
 	box-shadow: ${(props) => props.theme.boxDark};
 	border-radius: 1rem;
+	@media (max-width: 900px) {
+		border: 1px solid ${(props) => props.theme.primaryDark};
+	}
 `;
 
 export const LoginRegisterButton = styled.button`
