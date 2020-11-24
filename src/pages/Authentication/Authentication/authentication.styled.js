@@ -5,4 +5,5 @@ export const AuthContainer = styled.div`
 	width: 100%;
 	flex-direction: column;
 	padding: 5rem 10rem;
+	max-height: 100%;
 `;
