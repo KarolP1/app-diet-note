@@ -16,8 +16,7 @@ import { Logo } from "../Logo/NavbarLogo";
 const ButtonGroup = (props) => {
 	const [open, setOpen] = useState(false);
 
-	const { app, landingPage, landingPageContact, login, signup } = routes;
-
+	const { app, landingPage, landingPageContact, auth } = routes;
 	return (
 		<Nav>
 			<NavbarContainer>
@@ -40,8 +39,7 @@ const ButtonGroup = (props) => {
 					<NavItem>
 						<NavLink to={landingPageContact}>Kontakt</NavLink>
 					</NavItem>
-					<NavItemLogin to={login}>Login</NavItemLogin>
-					<NavItemLogin to={signup}>Signup</NavItemLogin>
+					<NavItemLogin to={auth}>Dołącz do nas</NavItemLogin>
 				</MenuPlaceholder>
 			</NavbarContainer>
 		</Nav>

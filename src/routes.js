@@ -2,7 +2,7 @@ export const routes = {
 	landingPage: "/",
 	landingPageContact: "/contact",
 	app: "/app",
-	login: "/login",
+	auth: "/auth",
 	signup: "/register",
 	diet: " /diet",
 	notes: "/notes",
