@@ -31,9 +31,7 @@ export const TitleContainer = styled.div`
 `;
 
 export const Title = styled.p`
-	width: 100%;
-
-	width: 250px;
+	width: 50vw;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
