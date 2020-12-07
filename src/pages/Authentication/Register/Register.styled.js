@@ -59,15 +59,14 @@ export const InputContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 	height: 100%;
-	max-width: 80%;
 	margin: 1rem;
+	width: 100%;
 `;
 export const Input = styled.input`
 	margin: 2rem;
 	padding: 1rem 2rem;
 	height: 100%;
-	width: 40rem;
-
+	width: 100%;
 	box-shadow: ${(props) => props.theme.boxLight};
 	border: none;
 	border-radius: 1rem;
@@ -95,11 +94,17 @@ export const MyButton = styled.button`
 	color: ${(props) => props.theme.default};
 	font-size: 2rem;
 	font-weight: 100;
+
+	@media (max-width: 900px) {
+		width: 50%;
+	}
 `;
 
 export const AuthContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	max-height: 100%;
+	padding: 3rem;
 	align-items: center;
 `;
