@@ -9,9 +9,12 @@ import {
 	AuthContainer,
 	InputContainer,
 	MyButton,
+	ImageContainer,
+	LockImage,
 } from "./Register.styled";
 import Logo_1x1 from "../../../assets/Logo/Logo_1x1.svg";
 import { register_function } from "./register_function";
+import lock_in from "../../../assets/Logo/lock_in.svg";
 
 export const RegisterPage = (props) => {
 	const { setIsLogin } = props;
@@ -35,7 +38,12 @@ export const RegisterPage = (props) => {
 			<LeftSideContainer>
 				<ImageLogo1x1 src={Logo_1x1} />
 			</LeftSideContainer>
+
 			<FormContainer>
+				<ImageContainer>
+					<LockImage src={lock_in} />
+				</ImageContainer>
+
 				<AuthContainer>
 					<InputContainer>
 						<Input

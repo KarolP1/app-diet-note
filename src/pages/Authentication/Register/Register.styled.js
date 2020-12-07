@@ -7,6 +7,7 @@ export const RegisterContainer = styled.div`
 	flex-direction: row;
 	box-shadow: ${(props) => props.theme.boxDark};
 	border-radius: 1rem;
+
 	@media (max-width: 900px) {
 		border: 1px solid ${(props) => props.theme.primaryDark};
 	}
@@ -34,7 +35,7 @@ export const FormContainer = styled.div`
 	flex: 1;
 	position: relative;
 	align-items: center;
-	padding-top: 10rem;
+	justify-content: center;
 `;
 
 export const LeftSideContainer = styled.div`
@@ -63,9 +64,7 @@ export const InputContainer = styled.div`
 	width: 100%;
 `;
 export const Input = styled.input`
-	margin: 2rem;
-	padding: 1rem 2rem;
-	height: 100%;
+	padding: 2rem 4rem;
 	width: 100%;
 	box-shadow: ${(props) => props.theme.boxLight};
 	border: none;
@@ -82,13 +81,11 @@ export const InputTitle = styled.p`
 `;
 
 export const MyButton = styled.button`
-	height: 7rem;
+	height: 4rem;
 	box-shadow: ${(props) => props.theme.boxLight};
 	border: none;
 	padding: 1rem 2rem;
-	width: 40rem;
-	height: 6rem;
-	margin-top: 2rem;
+	width: 50%;
 	border-radius: 1rem;
 	background-color: ${(props) => props.theme.primaryDark};
 	color: ${(props) => props.theme.default};
@@ -105,6 +102,19 @@ export const AuthContainer = styled.div`
 	flex-direction: column;
 	width: 100%;
 	max-height: 100%;
-	padding: 3rem;
+	padding: 2rem 10rem;
 	align-items: center;
+	justify-content: center;
+`;
+
+export const ImageContainer = styled.div`
+	width: 25%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`;
+
+export const LockImage = styled.img`
+	width: 50%;
+	height: auto;
 `;
