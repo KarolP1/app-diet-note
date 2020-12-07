@@ -59,7 +59,7 @@ export const InputContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 	height: 100%;
-	width: 80%;
+	max-width: 80%;
 	margin: 1rem;
 `;
 export const Input = styled.input`
