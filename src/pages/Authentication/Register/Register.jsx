@@ -1,23 +1,16 @@
 import React, { useEffect, useState } from "react";
 import {
-	FormContainer,
 	ImageLogo1x1,
-	Input,
 	LeftSideContainer,
 	LoginRegisterButton,
 	RegisterContainer,
-	AuthContainer,
-	InputContainer,
-	MyButton,
-	ImageContainer,
-	LockImage,
 } from "./Register.styled";
 import Logo_1x1 from "../../../assets/Logo/Logo_1x1.svg";
-import { register_function } from "./register_function";
-import lock_in from "../../../assets/Logo/lock_in.svg";
+import RegisterForm from "../../../components/authentication/registerForm";
+import "./style.css";
 
 export const RegisterPage = (props) => {
-	const { setIsLogin } = props;
+	const { isLogin, setIsLogin } = props;
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -39,47 +32,20 @@ export const RegisterPage = (props) => {
 				<ImageLogo1x1 src={Logo_1x1} />
 			</LeftSideContainer>
 
-			<FormContainer>
-				<ImageContainer>
-					<LockImage src={lock_in} />
-				</ImageContainer>
+			<RegisterForm
+				userData={(email, password, confirm)}
+				setIsLogin={props.setIsLogin}
+				setPassword={setPassword}
+				setEmail={setEmail}
+				setConfirm={setConfirm}
+				confirm={confirm}
+				email={email}
+				password={password}
+			/>
 
-				<AuthContainer>
-					<InputContainer>
-						<Input
-							type="email"
-							name="email"
-							placeholder="Podaj adres email!"
-							onChange={(e) => setEmail(e.target.value)}
-						/>
-					</InputContainer>
-					<InputContainer>
-						<Input
-							type="password"
-							name="password"
-							placeholder="Podaj hasło"
-							onChange={(e) => setPassword(e.target.value)}
-						/>
-					</InputContainer>
-					<InputContainer>
-						<Input
-							type="password"
-							name="confirm"
-							placeholder="Potwierdź hasło"
-							onChange={(e) => setConfirm(e.target.value)}
-						/>
-					</InputContainer>
-				</AuthContainer>
-				<MyButton type="submit" onClick={() => register_function({ user })}>
-					Zarejestruj
-				</MyButton>
-				<LoginRegisterButton onClick={() => setIsLogin(!props.isLogin)}>
-					Masz już konto ? Zaloguj się!
-				</LoginRegisterButton>
-			</FormContainer>
 			<LoginRegisterButton
 				type={"button"}
-				onClick={() => setIsLogin(!props.isLogin)}
+				onClick={() => setIsLogin(!isLogin)}
 			></LoginRegisterButton>
 		</RegisterContainer>
 	);

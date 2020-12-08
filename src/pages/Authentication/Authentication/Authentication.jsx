@@ -1,17 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { LoginPage } from "..";
 import { RegisterPage } from "../Register/Register";
 import { AuthContainer } from "./authentication.styled";
 
 const Authentication = () => {
 	const [isLogin, setIsLogin] = useState(true);
-	useEffect(() => {
-		if (isLogin) {
-			console.log("login");
-		} else {
-			console.log("register");
-		}
-	}, [isLogin]);
 
 	return (
 		<AuthContainer>
