@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import { HomePage, Aplication, ContactPage, AuthPage } from "../pages/";
 import "./App.css";
 import { Navbar } from "../components/Navigation/Navbar/Navbar";
@@ -7,6 +7,14 @@ import { AppContainer } from "./../containers/AppContainer/AppContainer";
 import { ContentContainer } from "../containers/ContentContainer/ContentContainer";
 
 function App() {
+	const token = localStorage.getItem("token");
+	const IsLoggedIn = (token) => {
+		if (token === null) {
+			return false;
+		} else return true;
+	};
+	console.log(IsLoggedIn(token));
+
 	return (
 		<AppContainer>
 			<Navbar />
@@ -22,7 +30,7 @@ function App() {
 						<ContactPage />
 					</Route>
 					<Route exact path="/auth">
-						<AuthPage />
+						{token === null ? <AuthPage /> : <Redirect to="/" />}
 					</Route>
 				</Switch>
 			</ContentContainer>

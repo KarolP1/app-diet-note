@@ -1,15 +1,13 @@
-import React, { useState } from "react";
-import { LoginPage } from "..";
-import { RegisterPage } from "../Register/Register";
-import { AuthContainer } from "./authentication.styled";
+import React, { useEffect, useState } from "react";
+import { AuthenticationPage } from "./AuthenticationPage";
+import { AuthContainer } from "./Register.styled";
 
 const Authentication = () => {
 	const [isLogin, setIsLogin] = useState(true);
 
 	return (
 		<AuthContainer>
-			<LoginPage isLogin={isLogin} setIsLogin={setIsLogin} />
-			<RegisterPage isLogin={isLogin} setIsLogin={setIsLogin} />
+			<AuthenticationPage isLogin={isLogin} setIsLogin={setIsLogin} />
 		</AuthContainer>
 	);
 };

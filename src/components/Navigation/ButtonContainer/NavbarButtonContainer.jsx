@@ -8,6 +8,7 @@ import {
 	NavItem,
 	NavLink,
 	NavItemLogin,
+	NavItemLogout,
 } from "./NavbarButtonContainer.styled";
 import { Burger } from "../../../icons";
 import { routes } from "../../../routes";
@@ -15,6 +16,7 @@ import { Logo } from "../Logo/NavbarLogo";
 
 const ButtonGroup = (props) => {
 	const [open, setOpen] = useState(false);
+	const token = localStorage.getItem("token" || null);
 
 	const { app, landingPage, landingPageContact, auth } = routes;
 	return (
@@ -39,7 +41,18 @@ const ButtonGroup = (props) => {
 					<NavItem>
 						<NavLink to={landingPageContact}>Kontakt</NavLink>
 					</NavItem>
-					<NavItemLogin to={auth}>Dołącz do nas</NavItemLogin>
+					{token === null ? (
+						<NavItemLogin to={auth}>Dołącz do nas</NavItemLogin>
+					) : (
+						<NavItemLogout
+							onClick={() => {
+								localStorage.removeItem("token");
+								window.location.reload();
+							}}
+						>
+							wyloguj
+						</NavItemLogout>
+					)}
 				</MenuPlaceholder>
 			</NavbarContainer>
 		</Nav>

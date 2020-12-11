@@ -36,6 +36,10 @@ export const FormContainer = styled.div`
 	position: relative;
 	align-items: center;
 	justify-content: center;
+	padding: 5rem;
+	@media (max-width: 900px) {
+		padding: 10%;
+	}
 `;
 
 export const LeftSideContainer = styled.div`
@@ -57,18 +61,15 @@ export const ImageLogo1x1 = styled.img`
 ///
 export const InputContainer = styled.div`
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
 	margin: 1rem;
 	width: 100%;
 `;
 export const Input = styled.input`
 	padding: 2rem 4rem;
-	width: 100%;
 	box-shadow: ${(props) => props.theme.boxLight};
 	border: none;
 	border-radius: 1rem;
+	width: 100%;
 
 	&:focus {
 		border: 3px solid ${(props) => props.theme.primaryLight};
@@ -97,7 +98,7 @@ export const MyButton = styled.button`
 	}
 
 	@media (max-width: 900px) {
-		width: 50%;
+		width: 100%;
 	}
 `;
 
@@ -105,10 +106,13 @@ export const AuthContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	max-height: 100%;
+	height: 90%;
 	padding: 2rem 10rem;
 	align-items: center;
 	justify-content: center;
+	@media (max-width: 900px) {
+		padding: 1rem;
+	}
 `;
 
 export const ImageContainer = styled.div`
@@ -116,6 +120,9 @@ export const ImageContainer = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	@media (max-width: 900px) {
+		width: 80%;
+	}
 `;
 
 export const LockImage = styled.img`

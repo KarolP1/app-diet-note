@@ -1,6 +1,6 @@
 import React from "react";
-import { register_function } from "../../../pages/Authentication/Register/register_function";
-import { MyButton } from "../registerForm.styled";
+import { register_function } from "../../../../pages/Authentication/Register/register_function";
+import { MyButton } from "../authForms.styled";
 
 const RegisterButton = (props) => {
 	const { user, setEmail, setPassword, setConfirm, setIsLoading } = props;

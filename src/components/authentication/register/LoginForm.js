@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import {
-	FormContainer,
-	Input,
-	LoginRegisterButton,
 	AuthContainer,
 	InputContainer,
+	Input,
+	FormContainer,
 	ImageContainer,
 	LockImage,
-} from "./registerForm.styled";
-import lock_in from "../../assets/Logo/lock_in.svg";
-import RegisterButton from "./RegisterButton/RegisterButton";
+	LoginRegisterButton,
+} from "./authForms.styled";
 
-const RegisterForm = (props) => {
+import LoginButton from "./RegisterButton/LoginButton";
+import lock_in from "../../../assets/Logo/lock_in.svg";
+
+const LoginForm = (props) => {
 	const {
 		setIsLogin,
 		setEmail,
@@ -20,6 +21,7 @@ const RegisterForm = (props) => {
 		email,
 		password,
 		confirm,
+		isLogin,
 	} = props;
 	let user = { email, password, confirm };
 
@@ -57,29 +59,27 @@ const RegisterForm = (props) => {
 							onChange={(e) => setPassword(e.target.value)}
 						/>
 					</InputContainer>
-					<InputContainer>
-						<Input
-							type="password"
-							name="confirm"
-							value={confirm}
-							placeholder="Potwierdź hasło"
-							onChange={(e) => setConfirm(e.target.value)}
-						/>
-					</InputContainer>
 				</AuthContainer>
 			)}
-			<RegisterButton
+			<LoginButton
 				setIsLoading={setIsLoading}
 				user={user}
 				setEmail={setEmail}
 				setPassword={setPassword}
 				setConfirm={setConfirm}
-			/>
-			<LoginRegisterButton onClick={() => setIsLogin(!props.isLogin)}>
-				Masz już konto ? Zaloguj się!
+			>
+				Zaloguj
+			</LoginButton>
+			<LoginRegisterButton
+				onClick={() => {
+					console.log(isLogin);
+					setIsLogin(!isLogin);
+				}}
+			>
+				Nie masz jeszcze konta ? Zarejestruj się!
 			</LoginRegisterButton>
 		</FormContainer>
 	);
 };
 
-export default RegisterForm;
+export default LoginForm;

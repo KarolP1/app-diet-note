@@ -11,7 +11,6 @@ const postUser = async (user) => {
 	await axios
 		.post(`http://localhost:8080/user/signup`, { ...user })
 		.then((res) => {
-			console.log(res);
 			console.log(res.data);
 		})
 		.then((res) => console.log(res))

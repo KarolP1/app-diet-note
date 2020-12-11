@@ -154,6 +154,46 @@ export const NavItemLogin = styled(Link)`
 		}
 	}
 `;
+export const NavItemLogout = styled.button`
+	outline: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 10rem;
+	height: 5rem;
+	padding: 1.5rem 0.5rem;
+	border: 1px solid ${(props) => props.theme.warningMedium};
+	text-decoration: none;
+	background-color: transparent;
+	transition: ${(props) => props.theme.mediumSpeed};
+	border-radius: 0.3rem;
+	color: white;
+	cursor: pointer;
+	&:hover {
+		transform: translateY(-0.3rem);
+		color: ${(props) => props.theme.warningMedium};
+	}
+
+	@media screen and (max-width: 900px) {
+		width: 30%;
+		border: 0;
+		border-radius: 0;
+		color: ${(props) => props.theme.secondaryDark};
+
+		&:hover {
+			border-bottom: 1px solid ${(props) => props.theme.secondaryDark};
+			color: ${(props) => props.theme.secondaryDark};
+		}
+	}
+	@media screen and (min-width: 900px) {
+		&:last-child {
+			margin-left: 2rem;
+		}
+		&:active {
+			transform: rotate(2deg);
+		}
+	}
+`;
 
 export const NavLink = styled(Link)`
 	height: 110%;
