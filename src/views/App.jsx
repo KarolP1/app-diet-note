@@ -13,7 +13,6 @@ function App() {
 			return false;
 		} else return true;
 	};
-	console.log(IsLoggedIn(token));
 
 	return (
 		<AppContainer>

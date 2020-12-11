@@ -1,4 +1,5 @@
 import axios from "axios";
+import jwt_decode from "jwt-decode";
 
 export const postToLogin = async (
 	user,
@@ -24,5 +25,7 @@ export const postToLogin = async (
 };
 
 const updateToken = (token) => {
-	localStorage.setItem("token", token);
+	localStorage.setItem("token", token || null);
+	const payload = jwt_decode(token);
+	localStorage.setItem("userId", payload.userId || null);
 };
