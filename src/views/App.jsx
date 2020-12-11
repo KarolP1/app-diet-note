@@ -8,11 +8,11 @@ import { ContentContainer } from "../containers/ContentContainer/ContentContaine
 
 function App() {
 	const token = localStorage.getItem("token");
-	const IsLoggedIn = (token) => {
-		if (token === null) {
-			return false;
-		} else return true;
-	};
+	// const IsLoggedIn = (token) => {
+	// 	if (token === null) {
+	// 		return false;
+	// 	} else return true;
+	// };
 
 	return (
 		<AppContainer>

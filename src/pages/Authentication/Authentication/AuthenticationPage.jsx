@@ -34,8 +34,8 @@ export const AuthenticationPage = (props) => {
 			{isLogin ? (
 				<LoginForm
 					userData={user}
-					setIsLogin={props.setIsLogin}
-					isLogin={props.isLogin}
+					setIsLogin={setIsLogin}
+					isLogin={isLogin}
 					email={email}
 					setEmail={setEmail}
 					setPassword={setPassword}
@@ -44,7 +44,7 @@ export const AuthenticationPage = (props) => {
 			) : (
 				<RegisterForm
 					userData={(email, password, confirm)}
-					setIsLogin={props.setIsLogin}
+					setIsLogin={setIsLogin}
 					setPassword={setPassword}
 					setEmail={setEmail}
 					setConfirm={setConfirm}
