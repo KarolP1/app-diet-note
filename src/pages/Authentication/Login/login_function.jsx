@@ -10,7 +10,7 @@ export const postToLogin = async (
 ) => {
 	const LoginUser = { email: user.email, password: user.password };
 	await axios
-		.post(`http://localhost:8080/user/signin`, LoginUser)
+		.post(`https://dietaplication.herokuapp.com/api/user/signin`, LoginUser)
 		.then((res) => {
 			setToken(res.data.token);
 			updateToken(res.data.token);

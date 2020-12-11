@@ -9,7 +9,9 @@ export const register_function = (props) => {
 };
 const postUser = async (user) => {
 	await axios
-		.post(`http://localhost:8080/user/signup`, { ...user })
+		.post(`https://dietaplication.herokuapp.com/api/user/signup`, {
+			...user,
+		})
 		.then((res) => {
 			console.log(res.data);
 		})
