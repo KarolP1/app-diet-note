@@ -17,22 +17,18 @@ const NoteDisplay = (props) => {
 	const [responseData, setResponseData] = useState([]);
 
 	useEffect(() => {
-		axios({
-			method: "GET",
-			url: "https://dietaplication.herokuapp.com/api/notes",
-			headers: {
-				"content-type": "application/octet-stream",
-				"x-rapidapi-host": "quotes15.p.rapidapi.com",
-				"x-rapidapi-key": process.env.REACT_APP_API_KEY,
-			},
-			params: {
-				language_code: "en",
-			},
-		})
+		const token = localStorage.getItem("token");
+		const userID = localStorage.getItem("userId");
+
+		axios
+			.get(`https://dietaplication.herokuapp.com/api/notes/${userID}/`, {
+				headers: {
+					Authorization: `Barer ${token}`,
+					"content-type": "application/JSON",
+				},
+			})
 			.then((response) => {
-				setTimeout(() => {
-					setResponseData(response.data);
-				}, 1000);
+				setResponseData(response.data);
 			})
 			.catch((error) => {
 				console.log(error);

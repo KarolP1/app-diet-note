@@ -1,10 +1,12 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import { HomePage, Aplication, ContactPage, AuthPage } from "../pages/";
+import { HomePage, Aplication, ContactPage } from "../pages/";
 import "./App.css";
 import { Navbar } from "../components/Navigation/Navbar/Navbar";
 import { AppContainer } from "./../containers/AppContainer/AppContainer";
 import { ContentContainer } from "../containers/ContentContainer/ContentContainer";
+import { AuthenticationContainer } from "../containers/Authentication";
+import AuthenticationPage from "./../pages/Authentication/AuthenticationPage";
 
 function App() {
 	const token = localStorage.getItem("token");
@@ -29,7 +31,7 @@ function App() {
 						<ContactPage />
 					</Route>
 					<Route exact path="/auth">
-						{token === null ? <AuthPage /> : <Redirect to="/" />}
+						{token === null ? <AuthenticationPage /> : <Redirect to="/" />}
 					</Route>
 				</Switch>
 			</ContentContainer>

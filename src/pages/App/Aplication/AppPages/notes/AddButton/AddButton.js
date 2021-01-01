@@ -5,15 +5,26 @@ import axios from "axios";
 
 export const AddButton = () => {
 	const [visible, setVisible] = useState(false);
+	const userId = localStorage.getItem("userId");
+	const token = localStorage.getItem("token");
 
 	const [postData, setPostData] = useState({});
 	const PostData = () => {
 		if (postData.title !== "" && postData.value !== "") {
 			axios
-				.post("https://dietaplication.herokuapp.com/api/notes", {
-					title: postData.title,
-					value: postData.value,
-				})
+				.post(
+					`https://dietaplication.herokuapp.com/api/notes/${userId}`,
+					{
+						title: postData.title,
+						value: postData.value,
+					},
+					{
+						headers: {
+							Authorization: `Barer ${token}`,
+							"content-type": "application/JSON",
+						},
+					}
+				)
 				.then(() => {
 					window.location.reload();
 				});

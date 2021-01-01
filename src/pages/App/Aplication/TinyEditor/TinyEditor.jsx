@@ -12,22 +12,26 @@ import Axios from "axios";
 export const TinyEditor = (props) => {
 	const [editorValue, setEditorValue] = useState("");
 	const [titleValue, setTitle] = useState("");
-	const [initialValue, setInitialValue] = useState("");
+	const [initialValue, setInitialValue] = useState({});
 
 	const { value, noteId } = props;
+	const userID = localStorage.getItem("userId");
 
 	useEffect(() => {
 		setTitle(value.title);
 		setInitialValue(value.value);
-	}, [value, props.vale]);
+	}, [value, props.value]);
 
 	const closeEditor = props.setVisible;
 
 	const editNotePost = async (noteId) => {
-		Axios.patch(`https://dietaplication.herokuapp.com/api/notes/${noteId}`, {
-			title: titleValue,
-			value: editorValue,
-		}).then(
+		Axios.patch(
+			`https://dietaplication.herokuapp.com/api/notes/${userID}/${noteId}`,
+			{
+				title: titleValue,
+				value: editorValue,
+			}
+		).then(
 			setTimeout(() => {
 				window.location.reload();
 			}, 1000)

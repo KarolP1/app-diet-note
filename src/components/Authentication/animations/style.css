@@ -1,3 +1,7 @@
+.lock_in_anim {
+	width: 20%;
+	height: auto;
+}
 .lds-ellipsis {
 	display: inline-block;
 	position: relative;
@@ -10,7 +14,7 @@
 	width: 13px;
 	height: 13px;
 	border-radius: 50%;
-	background: #026571;
+	background: #fff;
 	animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {

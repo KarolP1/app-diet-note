@@ -4,7 +4,10 @@ export const colorTheme = {
 	primaryLight: "#50AAA4",
 	primaryLighter: "#77CCBE",
 	primaryLightest: "#9EEED7",
-	default: "#FFFCEB",
+
+	default: "#FFFCEf",
+	defaultLight: "#FFFEFA",
+	white: "#fff",
 
 	secondaryDark: "#EDBC07",
 	secondaryMedium: "#F2CC40",

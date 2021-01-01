@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RubbisBin } from "../../../../../../../icons/Rubishbin/rubishbin";
 import { IconButton, SettingsContainer } from "./DisplaySettings.styled";
 import { ThemeProvider } from "styled-components";
@@ -12,23 +12,52 @@ import {
 } from "../../../../../../../theme";
 
 const DisplaySettings = (props) => {
-	const { setValue, setNoteId } = props;
+	const userID = localStorage.getItem("userId");
+	const token = localStorage.getItem("token");
+	const { setValue, value } = props;
 	const showEditor = props.setVisible;
 
+	const [dataValue, setDataValue] = useState({});
+
+	useEffect(() => {
+		setValue(dataValue);
+		console.log(value);
+	}, [dataValue]);
+
 	const deleteNote = (NoteId) => {
+		console.log("delete : " + NoteId, "userId : " + userID);
 		axios
-			.delete(`https://dietaplication.herokuapp.com/api/notes/${NoteId}`)
-			.then(() => {
-				window.location.reload();
-			});
+			.delete(
+				`https://dietaplication.herokuapp.com/api/notes/${userID}/${NoteId}`,
+				{
+					headers: {
+						Authorization: `Barer ${token}`,
+					},
+				}
+			)
+			.then((res) => {
+				console.log(res);
+			})
+			.catch((err) => console.log(err));
 	};
+
 	const editNoteGet = async (NoteId) => {
-		const res = await axios.get(
-			`https://dietaplication.herokuapp.com/api/notes/${NoteId}`
-		);
-		setValue(res.data);
-		showEditor(true);
-		setNoteId(NoteId);
+		console.log("edit : " + NoteId, "userId : " + userID);
+		await axios
+			.get(
+				`https://dietaplication.herokuapp.com/api/notes/${userID}/${NoteId}`,
+				{
+					headers: {
+						Authorization: `Barer ${token}`,
+					},
+				}
+			)
+			.then((res) => {
+				setDataValue(res.data[0]);
+				console.log(dataValue);
+				showEditor(true);
+			})
+			.catch((err) => console.log(err));
 	};
 
 	const [colorDelete, setColorDelete] = useState(colorTheme.default);
@@ -51,6 +80,7 @@ const DisplaySettings = (props) => {
 							>
 								<RubbisBin size={25} color={colorDelete} />
 							</IconButton>
+							{/* Edit Button */}
 							<IconButton
 								onMouseEnter={() => {
 									setColorEdit(colorTheme.secondaryDark);

@@ -1,0 +1,27 @@
+#Rectangle_1 {
+	height: 31;
+	animation: lockThing 200ms 1 ease-out;
+	animation-fill-mode: forwards;
+}
+#Rectangle_2 {
+	height: 31;
+	animation: lockThing2 200ms 1 ease-out;
+	animation-fill-mode: forwards;
+}
+@keyframes lockThing {
+	from {
+		height: 25;
+	}
+	to {
+		height: 0;
+	}
+}
+
+@keyframes lockThing2 {
+	from {
+		height: 0;
+	}
+	to {
+		height: 1;
+	}
+}
