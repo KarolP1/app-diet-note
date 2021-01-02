@@ -1,4 +1,5 @@
 import axios from "axios";
+import { setCookie } from "../utils/CookieHandler";
 
 export const LoginFunction = async (props) => {
 	const { setError, setIsLoading } = props;
@@ -9,8 +10,12 @@ export const LoginFunction = async (props) => {
 			email,
 			password,
 		})
-		.then(() => {
+		.then((res) => {
 			setIsLoading(true);
+			console.log(res.data);
+			setCookie("accesToken", res.data.accessToken, 15 / 24 / 60);
+			setCookie("refreshToken", res.data.refreshToken, 7);
+			setCookie("userId", res.data.userId, 7);
 		})
 		.then(async () => {
 			await setIsLoading(false);
