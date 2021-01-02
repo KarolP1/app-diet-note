@@ -6,10 +6,16 @@ import {
 	LoginInput,
 } from "./LoginPage.styled";
 import { LoginFunction } from "../../../utils/Authentication.utils";
-import { LoadingCircle } from "../../../components/Authentication/animations/LoadingCircle";
+import { useCookies } from "react-cookie";
 
-export const LoginPage = () => {
+export const LoginPage = (props) => {
+	const { setIsLoading } = props;
 	const [error, setError] = useState();
+	const [cookies, setCookies] = useCookies([
+		"accesToken",
+		"refreshToken",
+		"userId",
+	]);
 
 	const [inputValues, setInputValues] = useState({
 		email: "",
@@ -23,7 +29,6 @@ export const LoginPage = () => {
 
 	return (
 		<FormContainer>
-			<LoadingCircle />
 			<LoginInput
 				type="text"
 				placeholder="podaj adres email"
@@ -39,7 +44,15 @@ export const LoginPage = () => {
 			{error ? <ErrorMessage>{error}</ErrorMessage> : null}
 			<LoginButton
 				type="button"
-				onClick={() => LoginFunction({ inputValues, setError })}
+				onClick={() =>
+					LoginFunction({
+						inputValues,
+						setError,
+						setIsLoading,
+						setCookies,
+						cookies,
+					})
+				}
 			>
 				Zaloguj
 			</LoginButton>

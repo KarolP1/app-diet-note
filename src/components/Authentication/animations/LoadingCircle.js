@@ -1,8 +1,10 @@
+import "./style.css";
+
 export const LoadingCircle = () => (
 	<div class="lds-ellipsis">
-		<div>a</div>
-		<div>a</div>
-		<div>a</div>
-		<div>a</div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
 	</div>
 );

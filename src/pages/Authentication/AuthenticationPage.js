@@ -4,19 +4,25 @@ import { LogRegButton } from "./../../components/Authentication/LogRegButton/Log
 import { LoginPage } from "./login/LoginPage";
 import LockIcon from "../../icons/Lock/LockIcon";
 import { RightAuthContainer } from "../../containers/Authentication/Authentication.styled";
+import { LoadingCircle } from "./../../components/Authentication/animations/LoadingCircle";
 
 const AuthenticationPage = () => {
 	const [isLogin, setIsLogin] = useState(true);
+	const [isLoading, setIsLoading] = useState(false);
 
-	useEffect(() => {
-		console.log(isLogin);
-	}, [isLogin]);
+	const Login = (isLoading) => {
+		if (isLoading) {
+			return <LoadingCircle />;
+		} else {
+			return <LoginPage isLoading={isLoading} setIsLoading={setIsLoading} />;
+		}
+	};
 
 	return (
 		<AuthenticationContainer>
 			<LockIcon isLogin={isLogin} />
 			<RightAuthContainer>
-				{isLogin ? <LoginPage /> : <div>register</div>}
+				{isLogin ? Login(isLoading) : <div>register</div>}
 			</RightAuthContainer>
 			<LogRegButton clickFunction={() => setIsLogin(!isLogin)}>
 				{isLogin
