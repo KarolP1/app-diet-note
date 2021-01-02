@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { AuthenticationContainer } from "./../../containers/Authentication/Authentication";
 import { LogRegButton } from "./../../components/Authentication/LogRegButton/LogRegButton";
 import { LoginPage } from "./login/LoginPage";

@@ -5,7 +5,6 @@ import "./App.css";
 import { Navbar } from "../components/Navigation/Navbar/Navbar";
 import { AppContainer } from "./../containers/AppContainer/AppContainer";
 import { ContentContainer } from "../containers/ContentContainer/ContentContainer";
-import { AuthenticationContainer } from "../containers/Authentication";
 import AuthenticationPage from "./../pages/Authentication/AuthenticationPage";
 
 function App() {
