@@ -14,15 +14,14 @@ import {
 const DisplaySettings = (props) => {
 	const userID = localStorage.getItem("userId");
 	const token = localStorage.getItem("token");
-	const { setValue, value } = props;
+	const { setValue } = props;
 	const showEditor = props.setVisible;
 
 	const [dataValue, setDataValue] = useState({});
 
 	useEffect(() => {
 		setValue(dataValue);
-		console.log(value);
-	}, [dataValue]);
+	}, [dataValue, setValue]);
 
 	const deleteNote = (NoteId) => {
 		console.log("delete : " + NoteId, "userId : " + userID);
